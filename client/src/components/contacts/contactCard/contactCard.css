@@ -1,0 +1,75 @@
+.contact-card{
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(92, 90, 90);
+    border-radius: 5px;
+}
+.card-head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(92, 90, 90);
+}
+.head-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.head-info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.head-info span{
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.darkcontact .head-info span{
+    color: #ddd;
+}
+.head-icons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.head-icons button{
+    line-height: 0px;
+    padding: 10px 15px;
+    gap: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 15px;
+    background-color: rgb(40, 77, 243);
+    color: #ddd;
+}
+.head-icons button svg{
+    margin-right: 5px;
+}
+.head-icons button:last-of-type{
+    margin: 0px;
+    background-color: rgb(180, 6, 41);
+}
+.url-box{
+   margin-bottom: 10px;
+   padding: 0px 10px;
+}
+.contact-card .addurl{
+    padding: 0px 10px;
+}
+.contact-card .addurl button{
+  line-height: 0px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #ddd;
+  background-color: rgb(4, 196, 4);
+}
+.contact-card .addurl button svg{
+    margin-right: 5px;
+}

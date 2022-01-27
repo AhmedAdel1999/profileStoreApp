@@ -1,0 +1,22 @@
+.homebox{
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+.homebox .home-content{
+    max-width: 600px;
+    min-width: 200px;
+    background-color: rgb(243, 240, 240);
+    border-radius: 5px;
+}
+.homebox .home-content div{
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.homebox .home-content div h3 svg{
+    margin-left: 7px;
+    color: rgb(197, 238, 13);
+}

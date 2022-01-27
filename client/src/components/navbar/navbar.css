@@ -1,0 +1,115 @@
+.navbar-section{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    color: #000;
+    position: sticky;
+    top: 0px;
+  }
+  .dark{
+    background-color: #4adede;
+    color: rgb(252, 250, 250)
+}
+  .navbar-section .logo{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    height: 60px;
+  }
+  .navbar-section .logo a{
+    text-decoration: none;
+    color: inherit;
+}
+  .navbar-section .toggel{
+    padding: 0px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+  }
+  .navbar-section .links{
+    list-style-type: none;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    transition: all .5s ease-in-out;
+  }
+  .navbar-section .links li{
+    display: block;
+    height: 100%;
+  }
+  .navbar-section .links li>a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+  .navbar-section .links li>a:hover{
+    color: #4adede;
+    background-color: rgb(247, 242, 242)
+}
+.navbar-section .links li>a.active{
+    color: #4adede;
+    background-color: rgb(247, 242, 242)
+}
+.dark .links li>a:hover{
+    color: #fff;
+    background-color: #000
+}
+.dark .links li>a.active{
+    color: #fff;
+    background-color: #000
+}
+.navbar-section .links li a svg{
+    margin-right: 5px;
+}
+.navbar-section .links li:last-child a.mood{
+    color: #ecec4a;
+}
+
+.dark .links li a{
+    color: rgb(252, 250, 250);
+}
+.dark .links li:last-child a.mood{
+    color: rgb(70, 8, 185);
+}
+  @media (max-width:992px){
+    .navbar-section{
+        flex-wrap: wrap;
+    }
+    .navbar-section .links{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        max-height: 400px;
+    }
+    .navbar-section .links li{
+        height: auto;
+        width: 100%;
+        padding: 0px 20px;
+        overflow: hidden;
+    }
+    .navbar-section .links li a{
+        display: block;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+  }

@@ -1,0 +1,99 @@
+.modal .modal-header{
+    font-size: 20px;
+    font-weight: bold;
+}
+.darkmodal .modal-header{
+    background-color: #000;
+    color: #fff;
+}
+.darkmodal .modal-body{
+    background-color: #000;
+    color: #fff;
+}
+.modal .modal-header div:nth-of-type(1) svg{
+    margin-right: 5px;
+}
+.modal .modal-header div:nth-of-type(2) svg{
+    cursor: pointer;
+}
+.modal .modal-body form{
+  display: block;
+  width: 100%;
+}
+.modal .modal-body form div{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal .modal-body form div label{
+    text-align: left;
+}
+.modal .modal-body form div input,
+.modal .modal-body form div select{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 5px;
+    background-color: inherit;
+    color: inherit;
+}
+.darkmodal .modal-body form div select option{
+    background-color: #000;
+    color: #fff;
+}
+.modal .modal-body form .upload{
+    display: flex;
+}
+.modal .modal-body form .upload label{
+    display: block;
+    cursor: pointer;
+    padding: 10px 5px;
+    background-color: #0cc015;
+    color: #fff;
+    border-radius: 5px;
+}
+.modal .modal-body form .upload label svg{
+    margin-right: 5px;
+}
+.modal .modal-body form .imgbox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal .modal-body form .imgbox img{
+    width: 80%;
+    height: 25vh;
+}
+.modal .modal-body form .imgbox span{
+    position: absolute;
+    left: calc(90% - 15px);
+    top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #f00;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.modal .modal-body form .submit{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0px;
+}
+.modal .modal-body form .submit button{
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#0cc015 ;
+}

@@ -1,0 +1,14 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  perspective: 600px;
+}
+.App{
+  padding: 0px 10px;
+  height: 100vh;
+}
+button{
+  cursor: pointer;
+}
