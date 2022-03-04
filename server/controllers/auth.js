@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const User = require('../models/user');
 const validator = require('validator');
 const { SECRET } = require('../utils/config');
@@ -15,7 +15,7 @@ const loginUser = async (req, res) => {
       .send({ error: 'No account with this email has been registered.' });
   }
 
-  const credentialsValid = await bcrypt.compare(password, user.passwordHash);
+  const credentialsValid = await bcryptjs.compare(password, user.passwordHash);
 
   if (!credentialsValid) {
     return res.status(401).send({ error: 'Invalid credentials.' });
@@ -54,7 +54,7 @@ const registerUser = async (req, res) => {
   }
 
   const saltRounds = 10;
-  const passwordHash = await bcrypt.hash(password, saltRounds);
+  const passwordHash = await bcryptjs.hash(password, saltRounds);
 
   const user = new User({
     displayName,

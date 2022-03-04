@@ -65,7 +65,7 @@
     text-decoration: none;
     color: #06c2bc;
 }
-.auth-account form .submit button{
+.auth-account form .submit .submitbutton{
     display: flex;
     outline: none;
     border: none;
@@ -73,14 +73,14 @@
     overflow: hidden;
     margin-bottom: 15px;
 }
-.auth-account form .submit button span{
+.auth-account form .submit .submitbutton span{
     padding: 10px;
     color: #ddd;
     background-color: #06c2bc;
     font-size: 18px;
     font-weight: bold;
 }
-.auth-account form .submit button span:last-of-type{
+.auth-account form .submit .submitbutton span:last-of-type{
     padding: 10px 30px;
     background-color: #00e1d9
 }

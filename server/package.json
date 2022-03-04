@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cloudinary": "^1.27.1",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
@@ -16,14 +16,15 @@
     "validator": "^13.7.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build:ui": "rm -rf build && cd ../client && rm -rf build && npm run build --prod && cp -r build ../server"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.14.0"
+  },
   "devDependencies": {
-    "eslint": "^7.18.0"
+    "nodemon": "^2.0.15"
   }
 }

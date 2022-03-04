@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {BrowserRouter,Route,Switch} from "react-router-dom"
 import { AuthContext } from "./components/context/authContext";
 import { LightModeContext } from "./components/context/lightModeContext";
@@ -13,9 +13,15 @@ import './App.css';
 const App = () => {
   const {token} = useContext(AuthContext)
   const {isDark} = useContext(LightModeContext)
+  const[AppHeight,setAppHeight]=useState(`100vh`)
+
+  useEffect(()=>{
+    setAppHeight(`${window.innerHeight - 2}px`)
+  },[])
+
   return (
     <BrowserRouter>
-      <div className="App" style={{background:isDark?"#000":"#fff",color:isDark?"#fff":"#000"}}>
+      <div className="App" style={{background:isDark?"#000":"#fff",color:isDark?"#fff":"#000",height:AppHeight}}>
         <Navbar />
         <Switch>
           <Route path="/" exact strict render={()=>token?<ContactsPage isDark={isDark} />:<Home />} />

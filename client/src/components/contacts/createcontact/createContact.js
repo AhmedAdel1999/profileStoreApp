@@ -2,11 +2,13 @@ import React, { useEffect, useState,useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus,faFileUpload,faTimes,faEdit,faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Modal } from "react-bootstrap";
+import Ring from "react-cssfx-loading/lib/Ring"
 import { useToasts } from 'react-toast-notifications'
 import { AddContact,EditContact,GetAllContacts,optionsArray } from "../../utils/services";
 import { ContactContext } from "../../context/contactContext";
 import ErrorMsg from "../../utils/errorMsg";
 import "./createcontact.css"
+
 const CreateContact = ({showModal,setShowModal,contactId,isDark}) =>{
 
 
@@ -17,8 +19,8 @@ const CreateContact = ({showModal,setShowModal,contactId,isDark}) =>{
     const[callback,setCallback]=useState(false)
     const[Edit,setEdit]=useState(false)
     const[error,setError]=useState(null)
+    const[isLoading,setIsLoading]=useState(false)
     const { addToast:notify } = useToasts()
-    
 
     useEffect(()=>{
         if(contactId){
@@ -51,6 +53,7 @@ const CreateContact = ({showModal,setShowModal,contactId,isDark}) =>{
 
     const handelSubmit = async (e) =>{
     e.preventDefault();
+    setIsLoading(true)
     try {
         if(Edit){
            await EditContact({id:contactId,finalData:{name:contactData.name,displayPicture:picture}})
@@ -77,6 +80,7 @@ const CreateContact = ({showModal,setShowModal,contactId,isDark}) =>{
         setShowModal(false)
     } catch (error) {
         setError(error.response.data.error)
+        setIsLoading(false)
     }
     }
 
@@ -156,9 +160,22 @@ const CreateContact = ({showModal,setShowModal,contactId,isDark}) =>{
                                <button type="submit">
                                    {
                                        Edit?
-                                       <><FontAwesomeIcon icon={faEdit} /> Update</>
+                                       <React.Fragment>
+                                           <span><FontAwesomeIcon icon={faEdit} /> Update</span>
+                                          {
+                                            isLoading&&
+                                            <Ring color="#FFF" width="25px" height="25px" duration="1s" />
+                                          } 
+                                       </React.Fragment>
                                        :
-                                       <><FontAwesomeIcon icon={faPlus} /> Add</>
+                                       <React.Fragment>
+                                            <span><FontAwesomeIcon icon={faPlus} /> Add</span>
+                                            {
+                                            isLoading&&
+                                            <Ring color="#FFF" width="25px" height="25px" duration="1s" />
+                                           } 
+                                            
+                                       </React.Fragment>
                                    }
                                </button>
                            </div>

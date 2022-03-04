@@ -15,6 +15,7 @@ const Navbar = () =>{
 
     function changemode(){
         setMode(!isDark)
+        setToggle(false)
         localStorage.setItem("mode",JSON.stringify(!isDark))
     }
 
@@ -27,6 +28,7 @@ const Navbar = () =>{
         localStorage.removeItem("token")
         localStorage.removeItem("userData")
         localStorage.setItem("mode",false)
+        setToggle(false)
         window.location.href="/login"
     }
 
@@ -37,7 +39,7 @@ const Navbar = () =>{
     return(
         <div className={`navbar-section ${isDark?"dark":""}`} >
            <div className="logo">
-                <Link to="/">
+                <Link onClick={()=>setToggle(false)} to="/">
                     <FontAwesomeIcon icon={faUserAlt} />
                     ProfileStore
                </Link>
@@ -58,7 +60,7 @@ const Navbar = () =>{
                    token?
                    <React.Fragment>
                        <li>
-                            <NavLink activeClassName="active" to="#">
+                            <NavLink onClick={()=>setToggle(false)} activeClassName="active" to="#">
                                 <FontAwesomeIcon icon={faUserAlt} />
                                 Hi,{userData.username}
                             </NavLink>
@@ -83,13 +85,13 @@ const Navbar = () =>{
                    :
                    <React.Fragment>
                        <li>
-                            <NavLink activeClassName="active" to="/login">
+                            <NavLink onClick={()=>setToggle(false)} activeClassName="active" to="/login">
                                 <FontAwesomeIcon icon={faSignInAlt} />
                                 Login
                             </NavLink>
                        </li>
                        <li>
-                            <NavLink activeClassName="active" to="/register">
+                            <NavLink onClick={()=>setToggle(false)} activeClassName="active" to="/register">
                                 <FontAwesomeIcon icon={faEdit} />
                                 Register
                             </NavLink>

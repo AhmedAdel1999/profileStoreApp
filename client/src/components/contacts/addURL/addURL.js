@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 import { ContactContext } from "../../context/contactContext";
 import { GetAllContacts,optionsArray,AddUrl, EditUrl } from "../../utils/services";
 import { useToasts } from 'react-toast-notifications'
+import Ring from "react-cssfx-loading/lib/Ring"
 import ErrorMsg from "../../utils/errorMsg";
 import "./addURL.css"
 
@@ -15,6 +16,7 @@ const AddURL = ({showModal,setShowModal,contactId,urlId,isDark}) =>{
     const[callback,setCallback]=useState(false)
     const[Edit,setEdit] = useState(false)
     const[error,setError]=useState(null)
+    const[isLoading,setIsLoading]=useState(false)
     const { addToast:notify } = useToasts()
     
 
@@ -41,6 +43,7 @@ const AddURL = ({showModal,setShowModal,contactId,urlId,isDark}) =>{
 
     const handelSubmit = async(e) =>{
         e.preventDefault();
+        setIsLoading(true)
         try {
             if(Edit){
                 await EditUrl({urldata:{...urlData},contactid:contactId,urlid:urlId})
@@ -60,6 +63,7 @@ const AddURL = ({showModal,setShowModal,contactId,urlId,isDark}) =>{
             setShowModal(false)
         } catch (error) {
             setError(error.response.data.error)
+            setIsLoading(false)
         }
     }
     return(
@@ -110,12 +114,25 @@ const AddURL = ({showModal,setShowModal,contactId,urlId,isDark}) =>{
                         </div>
                         <div className="submit">
                             <button type="submit">
-                                {
-                                    Edit?
-                                    <><FontAwesomeIcon icon={faEdit} /> Update</>
-                                    :
-                                    <><FontAwesomeIcon icon={faPlus} /> Add</>
-                                }
+                            {
+                                Edit?
+                                <React.Fragment>
+                                    <span><FontAwesomeIcon icon={faEdit} /> Update</span>
+                                    {
+                                    isLoading&&
+                                    <Ring color="#FFF" width="25px" height="25px" duration="1s" />
+                                    } 
+                                </React.Fragment>
+                                :
+                                <React.Fragment>
+                                    <span><FontAwesomeIcon icon={faPlus} /> Add</span>
+                                    {
+                                    isLoading&&
+                                    <Ring color="#FFF" width="25px" height="25px" duration="1s" />
+                                    } 
+                                    
+                                </React.Fragment>
+                            }
                             </button>
                         </div>
                     </form>

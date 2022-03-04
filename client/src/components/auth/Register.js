@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field , ErrorMessage } from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit,faUserAlt,faLock,faAt } from '@fortawesome/free-solid-svg-icons'
-import * as Yup from "yup";
-import axios from "axios";
+import axiosInstance from "../utils/backendUrl";
+import Load from "../utils/Load";
 import ErrorMsg from "../utils/errorMsg";
+import * as Yup from "yup";
 import "./auth.css"
-import { Link } from "react-router-dom";
 
 const Register = () => {
   const[error,setError]=useState(null)
+  const[isSuccess,setIsSuccess]=useState(false)
+  const[isLoading,setIsLoading]=useState(false)
+
+  useEffect(()=>{
+    if(isSuccess){
+      window.location.href="/"
+    }
+  },[isSuccess])
 
   const onSubmit = async (values)=>{
+    setIsLoading(true)
   try {
-    let data = await axios.post("http://localhost:4000/api/register",values)
+    let data = await axiosInstance.post("/api/register",values)
     localStorage.setItem("token",JSON.stringify(data.data.token))
     localStorage.setItem("userData",JSON.stringify({username:data.data.displayName,email:data.data.email}))
-    window.location.href="/"
+    setIsSuccess(true)
   } catch (error) {
     setError(error.response.data.error)
+    setIsLoading(false)
   }
 }
   const schema = () =>{
@@ -29,6 +40,11 @@ const Register = () => {
     })
     return schema
   }
+
+  if(isLoading){
+    return <Load />
+  }
+
   return (
     <div className="auth">
        <div className="auth-account">
@@ -80,7 +96,7 @@ const Register = () => {
                 Already have an account?
                 <Link to="/login">Login</Link>
               </p>
-              <button type="submit">
+              <button type="submit" className="submitbutton">
                 <span><FontAwesomeIcon icon={faEdit} /></span>
                 <span>Register</span>
               </button>
