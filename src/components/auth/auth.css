@@ -1,0 +1,86 @@
+.auth{
+    display: flex;
+    justify-content: center;
+}
+.auth .auth-account{
+    width: 75%;
+}
+@media (max-width:776px){
+    .auth .auth-account{
+        width: 90%;
+    }
+}
+.auth .auth-account h3{
+    width: 100%;
+    text-align: center;
+}
+.auth .auth-account h3 svg{
+    margin-right: 5px;
+}
+.auth-account form{
+    display: block;
+    width: 100%;
+}
+.auth-account form>div{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.auth-account form>div label{
+    color: #000;
+    text-transform: capitalize;
+}
+.auth-account form>div span{
+    color: red;
+}
+.auth-account form>div div{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.auth-account form>div div svg{
+    margin-right: 10px;
+    color: rgb(109, 107, 107);
+}
+.auth-account form>div div input{
+    display: block;
+    width: 100%;
+    padding: 5px 0px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.auth-account form .submit{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.auth-account form .submit p{
+    margin-bottom: 15px;
+}
+.auth-account form .submit p a{
+    text-decoration: none;
+    color: #06c2bc;
+}
+.auth-account form .submit .submitbutton{
+    display: flex;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.auth-account form .submit .submitbutton span{
+    padding: 10px;
+    color: #ddd;
+    background-color: #06c2bc;
+    font-size: 18px;
+    font-weight: bold;
+}
+.auth-account form .submit .submitbutton span:last-of-type{
+    padding: 10px 30px;
+    background-color: #00e1d9
+}

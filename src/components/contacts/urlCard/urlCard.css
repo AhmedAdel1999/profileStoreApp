@@ -1,0 +1,47 @@
+.url-card{
+    border-bottom: 1px solid rgb(92, 90, 90);
+    padding: 5px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+.url{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.url svg{
+    font-size: 35px;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+.url a{
+    text-decoration: none;
+    color: rgb(40, 77, 243);
+}
+.darkurl .url a{
+    color:#ddd
+}
+.card-icons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card-icons button{
+    line-height: 0px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 0px;
+    width: 35px;
+    text-align: center;
+    background-color:rgb(199, 190, 190) ;
+    margin-right: 15px;
+    color: rgb(40, 77, 243);
+}
+.card-icons button:last-of-type{
+    margin: 0px;
+    color: rgb(180, 6, 41);
+}
