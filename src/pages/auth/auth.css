@@ -1,0 +1,123 @@
+.auth{
+    flex-basis: 100%;
+    flex-grow: 1;
+    padding: 0px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth .auth-content{
+    width: 420px;
+    min-width: 280px;
+    transform: translateY(-60px);
+}
+.auth-content .auth-header{
+    font-weight: bold;
+    color: #f3abb6;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-bottom: 10px;
+}
+
+.auth-content .auth-header svg{
+    transform: translateY(2px);
+}
+
+.auth-content form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+}
+.auth-content form div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.auth-content form .input-item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.auth-content form .input-item label{
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #f3abb6;
+}
+.auth-content form .input-item div{
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 2px solid #f3abb6;
+}
+.auth-content form .input-item div span{
+    background-color: #f3abb6;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+}
+.auth-content form .input-item input{
+    flex-grow: 1;
+    padding: 7px 10px;
+    outline: none;
+    border: none;
+    background-color: inherit; 
+}
+.auth-content form div input::placeholder{
+    color: #000;
+}
+.auth-content form .input-item span{
+    color: #f3abb6;
+}
+.auth-content form .submit{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.auth-content form .submit p{
+    margin: 0px;
+}
+.auth-content form .submit p a{
+    color: #9f8189 !important;
+    margin-left: 5px;
+}
+.auth-content form .submitbutton{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-right: 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: #9f8189;
+    color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.auth-content form .submitbutton span:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: 35px;
+    height: 38px;
+    background-color: #f3abb6;
+}
+.auth-content form .submitbutton span:last-of-type{
+    padding: 7px 10px;
+}
+
+@media(max-width:500px){
+    .auth{
+        padding: 0px 25px;
+    }
+}

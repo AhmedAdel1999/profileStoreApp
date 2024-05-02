@@ -1,0 +1,33 @@
+.searchbox{
+    flex-grow: 1;
+    min-width: 300px;
+    height: 45px;
+    border: 1px solid #9f8189;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+.searchbox svg{
+    font-size: 20px;
+    cursor: pointer;
+}
+.searchbox .searchicon{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9f8189;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.searchbox input{
+    background-color: inherit;
+    height: 100%;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 7px;
+}

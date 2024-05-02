@@ -1,0 +1,60 @@
+.modal-content{
+    background-color: #fbeee6;
+}
+.modal .modal-header{
+    font-size: 20px;
+    font-weight: bold;
+    color: #9f8189;
+ 
+}
+.modal .modal-header div:nth-of-type(1) svg{
+    margin-right: 5px;
+}
+.modal .modal-header div:nth-of-type(2) svg{
+    cursor: pointer;
+}
+.modal .modal-body form{
+  display: block;
+  width: 100%;
+}
+.modal .modal-body form div{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal .modal-body form div input,
+.modal .modal-body form div select{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid #9f8189;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: inherit;
+    color: inherit;
+}
+.modal .modal-body form div label{
+    color: #9f8189;
+    margin-bottom: 2px;
+}
+.modal .modal-body form .submit{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0px;
+}
+.modal .modal-body form .submit button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#f3abb6 ;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.modal .modal-body form .submit button span{
+    margin: 0px;
+}

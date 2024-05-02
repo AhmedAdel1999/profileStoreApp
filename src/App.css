@@ -1,0 +1,17 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  perspective: 600px;
+}
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbeee6;
+}
+button{
+  cursor: pointer;
+}
