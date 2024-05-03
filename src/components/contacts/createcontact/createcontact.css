@@ -2,14 +2,11 @@
     font-size: 20px;
     font-weight: bold;
 }
-.darkmodal .modal-header{
-    background-color: #000;
-    color: #fff;
+.modal .modal-header{
+    display: flex;
+    justify-content: space-between;
 }
-.darkmodal .modal-body{
-    background-color: #000;
-    color: #fff;
-}
+
 .modal .modal-header div:nth-of-type(1) svg{
     margin-right: 5px;
 }
@@ -39,10 +36,7 @@
     background-color: inherit;
     color: inherit;
 }
-.darkmodal .modal-body form div select option{
-    background-color: #000;
-    color: #fff;
-}
+
 .modal .modal-body form .upload{
     display: flex;
 }
