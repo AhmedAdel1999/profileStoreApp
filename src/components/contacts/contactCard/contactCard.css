@@ -1,5 +1,6 @@
 .contact-card{
     padding-bottom: 15px;
+    height: fit-content;
     background-color: #f1dbca;
     border-radius: 7px;
     display: flex;
